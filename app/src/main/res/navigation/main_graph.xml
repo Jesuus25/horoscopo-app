@@ -9,7 +9,11 @@
         android:id="@+id/horoscopoFragment"
         android:name="com.chunmaru.horoscopoapp.ui.horoscopo.HoroscopoFragment"
         android:label="fragment_horoscopo"
-        tools:layout="@layout/fragment_horoscopo" />
+        tools:layout="@layout/fragment_horoscopo" >
+        <action
+            android:id="@+id/action_horoscopoFragment_to_horoscopoDetailActivity"
+            app:destination="@id/horoscopoDetailActivity" />
+    </fragment>
     <fragment
         android:id="@+id/luckFragment"
         android:name="com.chunmaru.horoscopoapp.ui.luck.LuckFragment"
@@ -20,5 +24,14 @@
         android:name="com.chunmaru.horoscopoapp.ui.palmistry.PalmistryFragment"
         android:label="fragment_palmistry"
         tools:layout="@layout/fragment_palmistry" />
+    <activity
+        android:id="@+id/horoscopoDetailActivity"
+        android:name="com.chunmaru.horoscopoapp.ui.detail.HoroscopoDetailActivity"
+        android:label="activity_horoscopo_detail"
+        tools:layout="@layout/activity_horoscopo_detail" >
+        <argument
+            android:name="type"
+            app:argType="com.chunmaru.horoscopoapp.domain.model.HoroscopoModel" />
+    </activity>
 
 </navigation>
